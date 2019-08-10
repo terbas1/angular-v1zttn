@@ -1,0 +1,26 @@
+<p>
+<b>LISTA DE ESTUDIANTES CONTROLANDO ARRAY</b> <br>
+</p>
+  <br>
+  <form>
+  Seleccioine el Grado a evaluar: 
+  <select  id="gradoId" (change)="cambiar($event)">
+    <option *ngFor="let grado of grados" [value]="grado.id" >
+      {{grado.nombre}}
+    </option>
+  </select>
+  <table>
+    <tr>
+      <td>Código</td>
+      <td>Nombre Estudiante</td>
+      <td>Grado</td>
+    </tr>
+    <tr *ngFor="let estudiante of listaGrado">
+      <td> {{estudiante.id}}</td>
+      <td> {{estudiante.nombre}}</td>
+      <td> {{estudiante.idGrado}} - (
+        {{getNombreGrado(estudiante.idGrado)}})
+      </td>
+    </tr>
+  </table>
+  </form>
